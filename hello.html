@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGazer 視線追跡テスト</title>
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="gazePrediction" style="position: fixed; left: 0; top: 0; background-color: red; width: 10px; height: 10px; border-radius: 50%;"></div>
+
+    <script>
+        window.onload = function() {
+            webgazer.setGazeListener(function(data, elapsedTime) {
+                if (data == null) {
+                    return;
+                }
+                var xprediction = data.x; // これらのx座標はビューポートに関連しています
+                var yprediction = data.y; // これらのy座標はビューポートに関連しています
+                console.log("x: " + xprediction + ", y: " + yprediction + ", elapsedTime: " + elapsedTime);
+                
+                // 視線予測を視覚化
+                var gazePredictionElement = document.getElementById('gazePrediction');
+                gazePredictionElement.style.left = xprediction + 'px';
+                gazePredictionElement.style.top = yprediction + 'px';
+            }).begin();
+
+            // キャリブレーションの開始
+            webgazer.showVideoPreview(true).showPredictionPoints(true);
+        };
+    </script>
+</body>
+</html>

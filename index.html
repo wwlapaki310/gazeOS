@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>視線入力チャット</title>
+    <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="gazePointer"></div>
+    <div id="tabContainer">
+        <button id="calibrationTab" class="tab active">キャリブレーション</button>
+        <button id="chatTab" class="tab">チャット</button>
+        <button id="yesNoTab" class="tab">Yes/No</button>
+    </div>
+    <div id="calibrationMode" class="mode active">
+        <div id="cameraFeed"></div>
+        <p>画面上の様々な点を見て、キャリブレーションを行ってください。</p>
+    </div>
+    <div id="chatMode" class="mode">
+        <div id="kanaContainer">
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">わ</button></div>
+                <div class="kana-row"><button class="kana-btn">　</button></div>
+                <div class="kana-row"><button class="kana-btn">を</button></div>
+                <div class="kana-row"><button class="kana-btn">　</button></div>
+                <div class="kana-row"><button class="kana-btn">ん</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">ら</button></div>
+                <div class="kana-row"><button class="kana-btn">り</button></div>
+                <div class="kana-row"><button class="kana-btn">る</button></div>
+                <div class="kana-row"><button class="kana-btn">れ</button></div>
+                <div class="kana-row"><button class="kana-btn">ろ</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">や</button></div>
+                <div class="kana-row"><button class="kana-btn">　</button></div>
+                <div class="kana-row"><button class="kana-btn">ゆ</button></div>
+                <div class="kana-row"><button class="kana-btn">　</button></div>
+                <div class="kana-row"><button class="kana-btn">よ</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">ま</button></div>
+                <div class="kana-row"><button class="kana-btn">み</button></div>
+                <div class="kana-row"><button class="kana-btn">む</button></div>
+                <div class="kana-row"><button class="kana-btn">め</button></div>
+                <div class="kana-row"><button class="kana-btn">も</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">は</button></div>
+                <div class="kana-row"><button class="kana-btn">ひ</button></div>
+                <div class="kana-row"><button class="kana-btn">ふ</button></div>
+                <div class="kana-row"><button class="kana-btn">へ</button></div>
+                <div class="kana-row"><button class="kana-btn">ほ</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">な</button></div>
+                <div class="kana-row"><button class="kana-btn">に</button></div>
+                <div class="kana-row"><button class="kana-btn">ぬ</button></div>
+                <div class="kana-row"><button class="kana-btn">ね</button></div>
+                <div class="kana-row"><button class="kana-btn">の</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">た</button></div>
+                <div class="kana-row"><button class="kana-btn">ち</button></div>
+                <div class="kana-row"><button class="kana-btn">つ</button></div>
+                <div class="kana-row"><button class="kana-btn">て</button></div>
+                <div class="kana-row"><button class="kana-btn">と</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">さ</button></div>
+                <div class="kana-row"><button class="kana-btn">し</button></div>
+                <div class="kana-row"><button class="kana-btn">す</button></div>
+                <div class="kana-row"><button class="kana-btn">せ</button></div>
+                <div class="kana-row"><button class="kana-btn">そ</button></div>
+            </div>
+            <div id="kanaTable1">
+                <div class="kana-row"><button class="kana-btn">か</button></div>
+                <div class="kana-row"><button class="kana-btn">き</button></div>
+                <div class="kana-row"><button class="kana-btn">く</button></div>
+                <div class="kana-row"><button class="kana-btn">け</button></div>
+                <div class="kana-row"><button class="kana-btn">こ</button></div>
+            </div>
+            <div id="kanaTable2">
+                <div class="kana-row"><button class="kana-btn">あ</button></div>
+                <div class="kana-row"><button class="kana-btn">い</button></div>
+                <div class="kana-row"><button class="kana-btn">う</button></div>
+                <div class="kana-row"><button class="kana-btn">え</button></div>
+                <div class="kana-row"><button class="kana-btn">お</button></div>
+            </div>
+        </div>
+        <div id="chatArea">
+            <input type="text" id="inputField" readonly>
+            <button id="sendBtn">送信</button>
+            <div id="messages"></div>
+        </div>
+    </div>
+    <div id="yesNoMode" class="mode2">
+        <p>test</p>
+    </div>
+    <div id="cameraStatus"></div>
+    <script src="script.js"></script>
+</body>
+</html>

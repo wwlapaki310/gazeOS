@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#gazePointer {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#tabContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #f0f0f0;
+    margin: 0 5px;
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.mode {
+    display: none;
+}
+
+.mode.active {
+    display: block;
+}
+
+#calibrationMode {
+    text-align: center;
+}
+
+#cameraFeed {
+    width: 640px;
+    height: 480px;
+    margin: 0 auto;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+#kanaContainer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+#kanaTable1, #kanaTable2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kana-row {
+    display: flex;
+}
+
+.kana-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 2px;
+}
+
+#chatArea {
+    width: 300px;
+    margin: 0 auto;
+}
+
+#inputField {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#sendBtn {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#messages {
+    height: 200px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#cameraStatus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
